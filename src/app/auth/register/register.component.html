@@ -1,0 +1,63 @@
+
+
+<div class="login">
+    <div class="login-triangle"></div>
+    
+    <h2 class="login-header">Sign Up</h2>
+  
+    <form class="login-container" [formGroup]="registerForm"  (submit)="submit()" >    
+      <p><input matInput type="text" placeholder="Full-Name" id="name" formControlName="nameControl" ></p>
+       
+      <mat-error *ngIf="registerForm.controls.nameControl.hasError('required') && ( !registerForm.controls.passwordControl.hasError('required') || !registerForm.controls.usernameControl.hasError('required') || !registerForm.controls.emailControl.hasError('required') || !registerForm.controls.RepasswordControl.hasError('required') || !registerForm.controls.gender.hasError('required'))">
+        Full-Name is <strong>required</strong>
+    </mat-error>
+  
+      <p><input matInput type="text" placeholder="Username"  id="user" formControlName="usernameControl" ></p>
+      <mat-error *ngIf="registerForm.controls.usernameControl.hasError('required') && (!registerForm.controls.passwordControl.hasError('required') || !registerForm.controls.nameControl.hasError('required') || !registerForm.controls.emailControl.hasError('required') || !registerForm.controls.RepasswordControl.hasError('required') || !registerForm.controls.gender.hasError('required'))">
+        Username is <strong>required</strong>
+    </mat-error>
+      <p><input matInput type="email" placeholder="Email"  id="email" formControlName="emailControl"></p>
+      <mat-error *ngIf="registerForm.controls.emailControl.hasError('required')&& ( !registerForm.controls.nameControl.hasError('required') || !registerForm.controls.passwordControl.hasError('required') || !registerForm.controls.usernameControl.hasError('required')  || !registerForm.controls.RepasswordControl.hasError('required') || !registerForm.controls.gender.hasError('required'))">
+        Email is <strong>required</strong>
+     </mat-error>
+
+     <mat-error *ngIf="registerForm.controls.emailControl.hasError('email') && !registerForm.controls.emailControl.hasError('required')">
+
+      Please enter a valid email address
+
+     </mat-error>
+
+      <p><input matInput type="password" placeholder="Password" id="pass" formControlName="passwordControl"></p>
+
+      <mat-error *ngIf="registerForm.controls.passwordControl.hasError('required') && (!registerForm.controls.nameControl.hasError('required')  || !registerForm.controls.usernameControl.hasError('required') || !registerForm.controls.emailControl.hasError('required') || !registerForm.controls.RepasswordControl.hasError('required')|| !registerForm.controls.gender.hasError('required'))">
+        Password is <strong>required</strong>
+     </mat-error>
+     <mat-error *ngIf="registerForm.controls.passwordControl.hasError('minlength') && !registerForm.controls.passwordControl.hasError('required')  ">
+
+      Please enter Strong password
+
+  </mat-error>
+      <p><input matInput type="password" placeholder="Confirm Password" id="conf" formControlName="RepasswordControl"></p>
+
+      <mat-error *ngIf="registerForm.controls.RepasswordControl.hasError('required') && (!registerForm.controls.nameControl.hasError('required') || !registerForm.controls.passwordControl.hasError('required') || !registerForm.controls.usernameControl.hasError('required') || !registerForm.controls.emailControl.hasError('required') || !registerForm.controls.gender.hasError('required'))">
+        Confirm-Password is <strong>required</strong>
+     </mat-error>
+      <div class="radio" >
+      <label style="position:relative; right:70px "> Gender :</label>
+      <input  type="radio" name="gender" value="male" id="rad1" formControlName="gender" > Male
+     
+      <input  type="radio" name="gender" value="female" id="rad2" formControlName="gender" > Female
+      </div>
+      <mat-error *ngIf="registerForm.controls.gender.hasError('required') &&  (!registerForm.controls.nameControl.hasError('required') || !registerForm.controls.RepasswordControl.hasError('required') || !registerForm.controls.passwordControl.hasError('required') || !registerForm.controls.usernameControl.hasError('required') || !registerForm.controls.emailControl.hasError('required') )">
+
+        Gender  is <strong>required</strong>
+     </mat-error>
+     <p *ngIf ="flag" style="color: red;">  Not Match Password</p>
+     
+      <p><input  type="submit" value="Sign Up"  id="sub" [disabled]="!registerForm.valid" mat-raised-button color="info"  (click)="submit()"></p>
+      <p> Already have an account? <span style="color:#009688;" (click)="GoToLogin()">Login</span></p>
+
+    </form>
+  </div>
+
+

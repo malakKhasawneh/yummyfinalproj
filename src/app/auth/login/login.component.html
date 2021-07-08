@@ -1,0 +1,31 @@
+
+<div class="login">
+    <div class="login-triangle"></div>
+    
+    <h2 class="login-header">Log in</h2>
+  
+    <form class="login-container" (submit)="submit()">
+    
+
+      <p><input matInput type="text" id="username" placeholder="Username" [formControl]="userControl"  [(ngModel)]="Formdata.username" name ="username"></p>
+        <mat-error *ngIf="userControl.hasError('required') && !passwordControl.hasError('required') ">
+        Username is <strong>required</strong>
+    </mat-error>
+
+
+
+      <p><input matInput type="password" id="pass" placeholder="Password" [formControl]="passwordControl" [(ngModel)]="Formdata.password" name ="password"></p>
+      <mat-error *ngIf="passwordControl.hasError('minlength') && !passwordControl.hasError('required')  ">
+
+        Please enter Strong password
+
+    </mat-error>
+    
+      <mat-error *ngIf="passwordControl.hasError('required') && !userControl.hasError('required') ">
+        Password is <strong>required</strong>
+      </mat-error>
+      <input type="checkbox" [(ngModel)]="Formdata.rememberme" name="check" (change)="toggleEditable($event)" /> Remember me
+      <p><input type="submit" id="sub" value="Log in" [disabled]="!userControl.valid||!passwordControl.valid" mat-raised-button color="info"  (click)="submit()"></p>
+      <p>Don't have an account? <span style="color:#009688;" (click)="GoToRegister()">Create an account</span></p>
+    </form>
+  </div>
