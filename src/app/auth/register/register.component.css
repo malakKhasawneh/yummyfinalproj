@@ -73,7 +73,7 @@ body {
 .radio{
   padding: 12px;
 }
-#name,#user,#email,#pass,#conf,#sub {
+#name,#user,#email,#pass,#conf,#sub,#Location,#phone {
   box-sizing: border-box;
   display: block;
   width: 100%;

@@ -1,0 +1,41 @@
+<div id="header-image-menu" class="d-flex p-2">
+    <img src="https://previews.123rf.com/images/gal2007/gal20071909/gal2007190900087/129977069-tasty-and-healthy-food-black-background-handmade-pottery-table-with-delicious-and-nutritious-food-ce.jpg" alt="back img">
+    <div class = "image-div" >
+       <b style="font-size: 25px; color:#009688"> {{allrest.SelectedRest.restaurantName}}</b>
+       <p> <b>{{allrest.SelectedRest.cuisines}}</b></p>
+      <p><i class="bi bi-geo-alt"></i> <b>{{allrest.SelectedRest.location}} </b></p>
+       <p> <i class="bi bi-telephone-inbound"></i><b>{{allrest.SelectedRest.phoneNumber}}</b></p>
+       <p> <i class="bi bi-star"></i>Average Rate : <b>{{allrest.SelectedRest.avgRate}}</b></p>
+       <b *ngIf="allrest.SelectedRest.stauts==='Open'" class="open">{{allrest.SelectedRest.stauts}}</b>
+       <b *ngIf="allrest.SelectedRest.stauts==='Close'" class="close">{{allrest.SelectedRest.stauts}}</b>
+       <br>
+       <ngb-rating [max]="5" [(rate)]="starRating" [readonly]="false" *ngIf="shared.login"></ngb-rating> 
+       <br>
+       <button type="button" class="btn btn-light " (click)="ShowMenu()">Show Menu</button>
+    </div>
+ </div>
+
+
+
+<!--
+
+<h2>restaurantID :{{allrest.SelectedRest.restaurantID}}</h2>
+<h2>restaurantName :{{allrest.SelectedRest.restaurantName}}</h2>
+<h2>location: {{allrest.SelectedRest.location}}</h2>
+<h2>cuisines :{{allrest.SelectedRest.cuisines}}</h2>
+<h2>avgRate: {{allrest.SelectedRest.avgRate}}</h2>
+<h2> restaurantCategoryID :{{allrest.SelectedRest.restaurantCategoryID}}</h2>
+<h2> stauts :{{allrest.SelectedRest.stauts}}</h2>
+<h2> phoneNumber:{{allrest.SelectedRest.phoneNumber}}</h2>
+<h2> testimonials :{{allrest.SelectedRest.testimonials}}</h2>
+<h2> menus :{{allrest.SelectedRest.menus}}</h2>
+<h2> reviews :{{allrest.SelectedRest.reviews}}</h2>
+<h2> restaurant_Employees :{{allrest.SelectedRest.restaurant_Employees}}</h2>
+-->
+<!--
+<ngb-rating [max]="5" [(rate)]="starRating" [readonly]="true"></ngb-rating> -->
+<!--readobly true mean can't change -->
+<!--
+<p> the rating is : {{starRating}}</p>
+
+-->

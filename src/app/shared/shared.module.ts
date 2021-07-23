@@ -7,6 +7,10 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatMenuModule} from '@angular/material/menu';
 import{HttpClientModule}from '@angular/common/http'
+import {MatCardModule} from '@angular/material/card';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+import { RestProfileComponent } from '../customer/rest-profile/rest-profile.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 @NgModule({
   declarations: [],
   imports: [
@@ -17,7 +21,10 @@ import{HttpClientModule}from '@angular/common/http'
     NgxSpinnerModule,
     MatSidenavModule,
     MatMenuModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule,
+    NgbModule,
+    Ng2SearchPipeModule
   ],
   exports: [
     MatIconModule,
@@ -26,9 +33,19 @@ import{HttpClientModule}from '@angular/common/http'
     NgxSpinnerModule,
     MatSidenavModule,
     MatMenuModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule,
+    NgbModule,
+    Ng2SearchPipeModule
+
+    
 
   ]
 })
 export class SharedModule { 
+  public flag :any
+  public flag2 :any=false
+  public login :any=false
+  public restId:number=0
+
 }

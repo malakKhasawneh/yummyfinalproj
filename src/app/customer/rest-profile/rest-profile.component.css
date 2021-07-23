@@ -1,0 +1,51 @@
+ngb-rating {
+    color: #FFC107;
+    font-size: 40px;
+}
+
+#header-image-menu{
+    top: 20px;
+    position: relative;
+}
+#header-image-menu img{
+    display: block;
+    border-radius: 25px;
+    filter: blur(7px);
+    -webkit-filter: blur(7px);
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    margin-bottom: 50px;
+    
+}
+.image-div{
+    width: 389px;
+    border-radius: 25px;
+    height: 321px;
+    position: absolute;
+    padding-left: 17px;
+    padding-top: 18px;
+    border: 1px solid white;
+    top: 36%;
+    text-align: center;
+    left: 51%;
+    background: rgba(7, 7, 7, 0.5);
+    margin: -123px 0 0 -200px;
+}
+.open{
+    color:green;
+ 
+}
+.close{
+    color:red;
+    
+}
+
+p {
+color:white;
+font-size: 15px;
+padding-top: 15px;
+}
+i{
+    padding-right: 15px;
+}

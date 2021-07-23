@@ -1,0 +1,30 @@
+
+  .container{
+    width:80%;
+    margin:0 auto;
+    margin-top: 40px;
+}
+.card{
+    display: flex;
+    flex-direction: row;
+   justify-content: space-evenly;
+   flex-wrap: wrap;
+   margin-bottom: 50px;
+}
+h1{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.search-rest {
+  max-width: 500px;
+  padding-bottom: 50px;
+  margin:auto;
+}
+
+.form-control {
+  box-shadow: 0 10px 40px 0 #B0C1D9;
+}
+.form-control::placeholder  {
+  font-family: FontAwesome;
+}

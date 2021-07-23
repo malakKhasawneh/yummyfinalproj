@@ -5,50 +5,53 @@
     
     <h2 class="login-header">Sign Up</h2>
   
-    <form class="login-container" [formGroup]="registerForm"  (submit)="submit()" >    
-      <p><input matInput type="text" placeholder="Full-Name" id="name" formControlName="nameControl" ></p>
+    <form class="login-container" [formGroup]="registerForm"  >    
+      <p><input matInput type="text" placeholder="Full-Name" id="name" formControlName="name" ></p>
        
-      <mat-error *ngIf="registerForm.controls.nameControl.hasError('required') && ( !registerForm.controls.passwordControl.hasError('required') || !registerForm.controls.usernameControl.hasError('required') || !registerForm.controls.emailControl.hasError('required') || !registerForm.controls.RepasswordControl.hasError('required') || !registerForm.controls.gender.hasError('required'))">
+      <mat-error *ngIf="registerForm.controls.name.hasError('required') && ( !registerForm.controls.password.hasError('required') || !registerForm.controls.username.hasError('required') || !registerForm.controls.email.hasError('required') || !registerForm.controls.RepasswordControl.hasError('required') || !registerForm.controls.gender.hasError('required'))">
         Full-Name is <strong>required</strong>
     </mat-error>
   
-      <p><input matInput type="text" placeholder="Username"  id="user" formControlName="usernameControl" ></p>
-      <mat-error *ngIf="registerForm.controls.usernameControl.hasError('required') && (!registerForm.controls.passwordControl.hasError('required') || !registerForm.controls.nameControl.hasError('required') || !registerForm.controls.emailControl.hasError('required') || !registerForm.controls.RepasswordControl.hasError('required') || !registerForm.controls.gender.hasError('required'))">
+      <p><input matInput type="text" placeholder="Username"  id="user" formControlName="username" ></p>
+      <mat-error *ngIf="registerForm.controls.username.hasError('required') && (!registerForm.controls.password.hasError('required') || !registerForm.controls.name.hasError('required') || !registerForm.controls.email.hasError('required') || !registerForm.controls.RepasswordControl.hasError('required') || !registerForm.controls.gender.hasError('required'))">
         Username is <strong>required</strong>
     </mat-error>
-      <p><input matInput type="email" placeholder="Email"  id="email" formControlName="emailControl"></p>
-      <mat-error *ngIf="registerForm.controls.emailControl.hasError('required')&& ( !registerForm.controls.nameControl.hasError('required') || !registerForm.controls.passwordControl.hasError('required') || !registerForm.controls.usernameControl.hasError('required')  || !registerForm.controls.RepasswordControl.hasError('required') || !registerForm.controls.gender.hasError('required'))">
+      <p><input matInput type="email" placeholder="Email"  id="email" formControlName="email"></p>
+      <mat-error *ngIf="registerForm.controls.email.hasError('required')&& ( !registerForm.controls.name.hasError('required') || !registerForm.controls.password.hasError('required') || !registerForm.controls.username.hasError('required')  || !registerForm.controls.RepasswordControl.hasError('required') || !registerForm.controls.gender.hasError('required'))">
         Email is <strong>required</strong>
      </mat-error>
 
-     <mat-error *ngIf="registerForm.controls.emailControl.hasError('email') && !registerForm.controls.emailControl.hasError('required')">
+     <mat-error *ngIf="registerForm.controls.email.hasError('email') && !registerForm.controls.email.hasError('required')">
 
       Please enter a valid email address
 
      </mat-error>
 
-      <p><input matInput type="password" placeholder="Password" id="pass" formControlName="passwordControl"></p>
+      <p><input matInput type="password" placeholder="Password" id="pass" formControlName="password"></p>
 
-      <mat-error *ngIf="registerForm.controls.passwordControl.hasError('required') && (!registerForm.controls.nameControl.hasError('required')  || !registerForm.controls.usernameControl.hasError('required') || !registerForm.controls.emailControl.hasError('required') || !registerForm.controls.RepasswordControl.hasError('required')|| !registerForm.controls.gender.hasError('required'))">
+      <mat-error *ngIf="registerForm.controls.password.hasError('required') && (!registerForm.controls.name.hasError('required')  || !registerForm.controls.username.hasError('required') || !registerForm.controls.email.hasError('required') || !registerForm.controls.RepasswordControl.hasError('required')|| !registerForm.controls.gender.hasError('required'))">
         Password is <strong>required</strong>
      </mat-error>
-     <mat-error *ngIf="registerForm.controls.passwordControl.hasError('minlength') && !registerForm.controls.passwordControl.hasError('required')  ">
+     <mat-error *ngIf="registerForm.controls.password.hasError('minlength') && !registerForm.controls.password.hasError('required')  ">
 
       Please enter Strong password
 
   </mat-error>
       <p><input matInput type="password" placeholder="Confirm Password" id="conf" formControlName="RepasswordControl"></p>
 
-      <mat-error *ngIf="registerForm.controls.RepasswordControl.hasError('required') && (!registerForm.controls.nameControl.hasError('required') || !registerForm.controls.passwordControl.hasError('required') || !registerForm.controls.usernameControl.hasError('required') || !registerForm.controls.emailControl.hasError('required') || !registerForm.controls.gender.hasError('required'))">
+      <mat-error *ngIf="registerForm.controls.RepasswordControl.hasError('required') && (!registerForm.controls.name.hasError('required') || !registerForm.controls.password.hasError('required') || !registerForm.controls.username.hasError('required') || !registerForm.controls.email.hasError('required') || !registerForm.controls.gender.hasError('required'))">
         Confirm-Password is <strong>required</strong>
      </mat-error>
+     <p><input matInput type="text" placeholder="Location" id="Location" formControlName="Location" ></p>
+     <p><input matInput type="phone" placeholder="PhoneNumber" id="phone" formControlName="phoneNumber" ></p>
+
       <div class="radio" >
       <label style="position:relative; right:70px "> Gender :</label>
       <input  type="radio" name="gender" value="male" id="rad1" formControlName="gender" > Male
      
       <input  type="radio" name="gender" value="female" id="rad2" formControlName="gender" > Female
       </div>
-      <mat-error *ngIf="registerForm.controls.gender.hasError('required') &&  (!registerForm.controls.nameControl.hasError('required') || !registerForm.controls.RepasswordControl.hasError('required') || !registerForm.controls.passwordControl.hasError('required') || !registerForm.controls.usernameControl.hasError('required') || !registerForm.controls.emailControl.hasError('required') )">
+      <mat-error *ngIf="registerForm.controls.gender.hasError('required') &&  (!registerForm.controls.name.hasError('required') || !registerForm.controls.RepasswordControl.hasError('required') || !registerForm.controls.password.hasError('required') || !registerForm.controls.username.hasError('required') || !registerForm.controls.email.hasError('required') )">
 
         Gender  is <strong>required</strong>
      </mat-error>

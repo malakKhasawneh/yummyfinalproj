@@ -1,0 +1,29 @@
+<mat-card class="example-card">
+  
+    <mat-card-header >
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{MealName}}</mat-card-title>
+      <mat-card-subtitle>{{Category_}} </mat-card-subtitle>  <!-- | (split depend on what ) we call it pipeline-->
+    </mat-card-header>
+    <img mat-card-image src={{MealImg}} alt="Photo yummy">
+    <mat-card-content>
+      <p>
+        <b>Description</b> {{description_}}
+      </p>
+      <p>
+        <b>Price</b> {{Price}} JD
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <div class="centerdiv" *ngIf="share.login">
+      <button  class="button4" (click)="decrement()" >-</button>
+        {{currentNumber}}
+      <button  class="button5" (click)="increment()" >+</button>
+    </div>
+    <div class="col text-center" *ngIf="share.login">
+      <button type="button" class="btn btn-dark ">Add to cart</button>
+      </div>
+
+    </mat-card-actions>
+
+  </mat-card>

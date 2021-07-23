@@ -1,0 +1,70 @@
+.example-icon {
+    padding: 0 14px;
+  }
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+.example-card {
+    width: 250px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://www.jing.fm/clipimg/full/303-3039993_plate-clipart-clipart-transparent-dinner-plate.png');
+    background-size: cover;
+    
+  }
+  mat-card-subtitle{
+    overflow: hidden;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width:60px;
+  }
+  
+  mat-card-title{
+    overflow: hidden;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width:100px;
+  }
+  img{
+ height: 200px;
+ width: 250px;
+  }
+
+  .button4 {
+    border-radius: 8px;
+  background-color: rgb(235, 232, 232);
+  border-style: solid;
+  border-color: rgb(155, 173, 171);
+  color: rgb(0, 0, 0);
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+}
+.button5 {border-radius: 4px;
+  background-color: rgb(235, 232, 232);
+  border-style: solid;
+  border-color: rgb(155, 173, 171);
+  color: rgb(0, 0, 0);
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+}
+.centerdiv{
+  text-align: center;
+  padding-bottom: 10px;
+}

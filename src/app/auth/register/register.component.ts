@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { ToastrService } from 'ngx-toastr';
 import { RegisterService } from 'src/app/Services/register.service';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @Component({
   selector: 'app-register',
@@ -10,36 +13,58 @@ import { RegisterService } from 'src/app/Services/register.service';
 })
 export class RegisterComponent implements OnInit {
   flag :boolean = false
+
+  exist:any
   registerForm : FormGroup =new FormGroup({
-  nameControl:new FormControl('',[Validators.required]),
-  usernameControl:new FormControl('',[Validators.required]),
-  emailControl:new FormControl('',[Validators.required,Validators.email]),
-  passwordControl:new FormControl('',[Validators.required,Validators.minLength(8)]),
+  name:new FormControl('',[Validators.required]),
+  username:new FormControl('',[Validators.required]),
+  email:new FormControl('',[Validators.required,Validators.email]),
+  password:new FormControl('',[Validators.required,Validators.minLength(8)]),
   RepasswordControl:new FormControl('',[Validators.required,Validators.minLength(8)]),
-  gender:new FormControl ('', [Validators.required])
+  gender:new FormControl ('', [Validators.required]),
+  Location:new FormControl(''),
+  phoneNumber :new FormControl('')
+
 });
-  constructor(private router:Router ,private fb: FormBuilder,private reigster:RegisterService) { 
-    
+
+  constructor(private router:Router ,private fb: FormBuilder,private reigster:RegisterService,private tostar :ToastrService ,public spinner: NgxSpinnerService,private share :SharedModule) { 
   }
   submit(){
     
-    if(this.registerForm.get('passwordControl')?.value != this.registerForm.get('RepasswordControl')?.value)
+    if(this.registerForm.get('password')?.value != this.registerForm.get('RepasswordControl')?.value)
     this.flag = true;
     else{
+      this.CustomerAvailability()
+      setTimeout(() => {
+        console.log("flag  is this.exit " +typeof(this.reigster.getGlobalVar()))
+        this.exist=this.reigster.getGlobalVar().toUpperCase()
+      },5000)
+
       this.createCustomer()
     }
-
+   
   }
   
   ngOnInit(): void {
+   
   }
   GoToLogin(){
     this.router.navigate(['login'])  
   }
   createCustomer(){
-    
+   
+   
+     if(this.exist=="TRUE".toUpperCase() ){
     this.reigster.createCustomer(this.registerForm.value);
+     }
+    else{
+      this.tostar.error('UserName already exist !!')
+      //this.spinner.hide()
+    }
     
+  }
+  CustomerAvailability(){
+    this.reigster.CustomerAvailability(this.registerForm.value)
   }
 
 

@@ -1,0 +1,27 @@
+
+<div class=container>
+   
+ <!--ng for it's the same of for each the same synatx -->
+ <h1><b>All Restaurant</b></h1>
+ 
+ <div class="search-rest">
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start searching for restaurant name or cuisines or location ">
+  </div>     
+
+    <div class="card">
+       
+    <app-resturent-cards *ngFor= "let c of allRest.data | filter:searchText "[restaurantID]="c.restaurantID"[restaurantName]="c.restaurantName"[location]="c.location"[cuisines]="c.cuisines" [phoneNumber]="c.phoneNumber" [avgRate]="c.avgRate" [restaurantCategoryID]="c.restaurantCategoryID" [stauts]="c.stauts"[menus]="c.menus"
+    [restaurant_Employees]="c.restaurant_Employees" [reviews]="c.reviews" [testimonials]="c.testimonials"(openProfile)="GoToRestProfile()" >
+    
+    
+    </app-resturent-cards>
+   
+    </div>
+
+
+</div>
+
+
+
+ 
+

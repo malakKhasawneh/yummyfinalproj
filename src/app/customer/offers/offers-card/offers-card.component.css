@@ -1,0 +1,33 @@
+
+.example-icon {
+    padding: 0 14px;
+  }
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+.example-card {
+    width: 200px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQV6xJrDMRiSTp9laHeq_nvb4xLxg2mZTWA9A&usqp=CAU');
+    background-size: cover;
+  }
+  mat-card-subtitle{
+    overflow: hidden;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width:60px;
+  }
+  
+  mat-card-title{
+    overflow: hidden;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width:100px;
+  }
+  

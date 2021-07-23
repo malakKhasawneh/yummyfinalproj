@@ -1,0 +1,15 @@
+<div class=container>
+   
+    <!--ng for it's the same of for each the same synatx -->
+    <h1><b>{{offers.SelectedOffers.restaurantName }} Offers</b></h1>  
+  
+       <div class="card">
+        <ng-container *ngIf="offers.data.length>0">
+<app-card *ngFor="let m of offers.data " [restaurantID]="m.restaurantID" [DiscountAmonut_]="m.DiscountAmonut_" [Price]="m.Price" [MealName]="m.MealName" [Validity]="m.Validity" [RestaurantName]="m.RestaurantName"[MealImg]="m.MealImg">
+</app-card>
+</ng-container>
+<ng-container *ngIf="offers.data.length<=0">
+   <h1 class="noOffers">NO OFFERS</h1>
+</ng-container>
+</div>
+</div>

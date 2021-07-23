@@ -1,0 +1,34 @@
+<mat-card class="example-card">
+    <mat-card-header >
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{MealName}}</mat-card-title>
+      <mat-card-subtitle ></mat-card-subtitle>
+ 
+    </mat-card-header>
+    <img mat-card-image src={{MealImg}} alt="Photo yummy">
+    <mat-card-content>
+       <p>
+         <b>Price : </b>  <span style="text-decoration-line: line-through; "> {{Price}} JD</span>
+       </p>
+    <p>
+        <b>Discount Amonut : </b>{{DiscountAmonut_}} %
+    </p>
+    <p>
+        <b>Price After Discount : </b>{{Price-(DiscountAmonut_ / 100 * Price)  }} JD     </p>
+        <p>
+          <b>Valid to : </b>{{Validity | date}} 
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <div class="centerdiv" *ngIf="share.login">
+        <button  class="button4" (click)="decrement()" >-</button>
+          {{currentNumber}}
+        <button  class="button5" (click)="increment()" >+</button>
+      </div>
+      <div class="col text-center" *ngIf="share.login">
+        <button type="button" class="btn btn-dark ">Add to cart</button>
+        </div>
+    </mat-card-actions>
+
+  </mat-card>
+

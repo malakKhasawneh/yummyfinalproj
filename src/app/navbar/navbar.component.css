@@ -31,6 +31,16 @@ mat-toolbar{
     font-size: 20px;
   }
   
+  .active{
+    text-decoration: underline;
+    color: white;
+}
+.tab1,.tab2,.tab3{
+  text-decoration: underline;
+  color: white;
+}
+ 
+  
   /*
   #navBar li a:link, a:visited {
     font-size: 90%;

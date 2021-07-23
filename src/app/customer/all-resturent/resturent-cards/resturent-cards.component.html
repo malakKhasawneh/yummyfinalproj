@@ -1,0 +1,23 @@
+
+<mat-card class="example-card">
+    <mat-card-header (click)="showRestProfile()">
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{restaurantName}}</mat-card-title>
+      <mat-card-subtitle >{{cuisines}}</mat-card-subtitle>  <!-- | (split depend on what ) we call it pipeline-->
+    </mat-card-header>
+    <img mat-card-image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyoJ75aaZVL5LsOtR2njWGNeB14MoY401iug&usqp=CAU" alt="Photo yummy">
+    <mat-card-content>
+      <p>
+        <b>Location :</b> {{location}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <div class="col text-center">
+      <button type="button" class="btn btn-dark " (click)="showRestProfile()">Order Now</button>
+      </div>
+
+    </mat-card-actions>
+  </mat-card>
+  
+
+ 

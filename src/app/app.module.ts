@@ -10,11 +10,15 @@ import { CookieService } from 'ngx-cookie-service';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { ToastrModule ,ToastNoAnimationModule} from 'ngx-toastr';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { AboutUsComponent } from './about-us/about-us.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
@@ -24,11 +28,13 @@ import { ToastrModule ,ToastNoAnimationModule} from 'ngx-toastr';
     FlexLayoutModule,
     NgbModule,
     ToastNoAnimationModule.forRoot(),
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    Ng2SearchPipeModule,
     
   ],
   providers: [
-    CookieService 
+    CookieService ,
+    
   ],
   bootstrap: [AppComponent]
 })

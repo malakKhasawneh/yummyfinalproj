@@ -3,8 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthModule } from '../auth/auth.module';
 import { LoginComponent } from '../auth/login/login.component';
 import { RegisterComponent } from '../auth/register/register.component';
+import { AllResturentComponent } from './all-resturent/all-resturent.component';
 import { HomeComponent } from './home/home.component';
+import { MenuComponent } from './menu/menu.component';
 import { ProfileComponent } from './profile/profile.component';
+import { RestProfileComponent } from './rest-profile/rest-profile.component';
 
 const routes: Routes = [
   {
@@ -19,6 +22,18 @@ const routes: Routes = [
         path:'register',
         component: RegisterComponent
         },
+        {
+          path:'Rest',
+          component: AllResturentComponent
+          },
+          {
+            path:'restprofile',
+            component: RestProfileComponent
+            },
+            {
+              path:'menu',
+              component: MenuComponent
+              },
     
     {
       path:'profile',
