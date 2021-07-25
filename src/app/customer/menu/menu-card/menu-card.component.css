@@ -9,6 +9,11 @@
     margin-top: 50px;
     margin-bottom: 50px;
   }
+  .example-card:hover{
+    transform: scale(1.05);
+    box-shadow: -1px 10px 29px 0px rgba(0,0,0,0.8);
+  }
+  
   
   .example-header-image {
     background-image: url('https://www.jing.fm/clipimg/full/303-3039993_plate-clipart-clipart-transparent-dinner-plate.png');
